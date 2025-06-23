@@ -7,13 +7,13 @@
 @import url('./variables.css');
 
 /* 2. Base Styles and Global Utilities */
-@import url("./_base.css");
+@import url('./base.css');
 
 /* 3. Component Specific Styles */
-@import url('./_header.css');
-@import url('./_hero-section.css');
-@import url('./_form-card.css');
-@import url('./_autocomplete.css');
-@import url('./_benefits-section.css'); /* NEW: Import for the benefits section */
+@import url('./header.css');
+@import url('./hero-section.css');
+@import url('./form-card.css');
+@import url('./autocomplete.css');
+@import url('./benefits-section.css'); /* NEW: Import for the benefits section */
 
 /* Add more component imports here as you create them */
