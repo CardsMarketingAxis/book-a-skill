@@ -1,0 +1,238 @@
+/* --- Tutor Search Form Card --- */
+.tutor-search-form-card {
+  background-color: var(--color-white);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-xl) var(--spacing-2xl);
+  box-shadow: var(--box-shadow-lg);
+  width: 100%;
+  max-width: 950px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-grid {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+}
+
+.form-field {
+  text-align: left;
+  flex: 1;
+  min-width: 180px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Specific width for Learner's Age field on larger screens */
+.form-field-age {
+  flex: 0 0 150px;
+}
+
+.form-label {
+  display: block;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-darker-gray-label);
+  margin-bottom: var(--spacing-xxs);
+  white-space: nowrap;
+}
+
+/* Wrapper for icon and label for precise horizontal positioning */
+.label-and-icon-wrapper {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: var(--spacing-xxs);
+}
+
+/* Styles for icons appearing next to labels */
+.input-label-icon {
+  margin-right: var(--spacing-xs);
+  color: var(--color-darker-gray-label);
+  font-size: var(--font-size-base);
+}
+
+/* Wrapper for input itself (used for Subject & Location) */
+.input-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+/* General Input Styles (for text and select if any) */
+.text-input,
+.select-input {
+  width: 100%;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: 1px solid var(--color-light-gray);
+  border-radius: var(--border-radius-sm);
+  font-size: var(--font-size-xl);
+  color: var(--color-dark-gray);
+  background-color: var(--color-light-gray);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding-right: var(--spacing-md);
+  height: var(--spacing-2xl);
+  font-weight: var(--font-weight-extra-bold);
+}
+
+/* Make placeholder text mid-sized and regular weight */
+.text-input::placeholder {
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-medium-gray);
+  opacity: 1;
+  font-size: var(--font-size-lg);
+}
+
+.text-input:focus,
+.select-input:focus,
+.input-stepper-control:focus-within {
+  outline: none;
+  border-color: var(--color-brand-yellow);
+  box-shadow: 0 0 0 2px rgba(255, 193, 7, 0.2);
+}
+
+/* Specific styling for select input (if still used elsewhere) */
+.select-input {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23A0A4A8'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right var(--spacing-md) center;
+  background-size: 16px;
+}
+
+/* Hide native spinner arrows for number input (used within stepper) */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+/* Old .input-icon styles are no longer used for icons inside inputs. */
+.input-wrapper .input-icon {
+  display: none;
+}
+
+/* New Sub-text below input fields */
+.form-field-subtext {
+  font-size: var(--font-size-xs);
+  color: var(--color-subtext-gray);
+  margin-top: var(--spacing-xxs);
+  line-height: 1.4;
+  white-space: normal;
+}
+
+/* --- Stepper Control Styling for Learner's Age --- */
+.input-stepper-control {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color: var(--color-light-gray);
+  border: 1px solid var(--color-light-gray);
+  border-radius: var(--border-radius-sm);
+  height: var(--spacing-2xl);
+  overflow: hidden;
+}
+
+.input-stepper-control .text-input {
+  flex-grow: 1;
+  text-align: center;
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-extra-bold);
+  color: var(--color-dark-gray);
+}
+
+.stepper-btn {
+  background-color: var(--color-light-gray);
+  color: var(--color-medium-gray);
+  border: none;
+  padding: 0 var(--spacing-sm);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-bold);
+  cursor: pointer;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  width: var(--spacing-2xl);
+  flex-shrink: 0;
+}
+
+.stepper-btn:hover {
+  background-color: var(--color-brand-yellow-hover);
+  color: var(--color-primary-dark);
+}
+
+.stepper-btn:active {
+  background-color: var(--color-brand-yellow);
+}
+
+
+/* Search Tutor Button */
+.search-tutor-btn {
+  width: fit-content;
+  min-width: 200px;
+  align-self: center;
+  margin-top: var(--spacing-md);
+}
+
+.search-tutor-btn i {
+  margin-right: var(--spacing-xs);
+}
+
+/* Responsive adjustments for Form Card */
+@media (max-width: 992px) {
+  .tutor-search-form-card {
+    padding: var(--spacing-lg);
+    max-width: 700px;
+  }
+
+  .form-grid {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--spacing-lg);
+  }
+
+  .form-field {
+    flex: 0 0 calc(50% - var(--spacing-lg) / 2);
+    min-width: unset;
+  }
+
+  /* Specific adjustment for form-field-age on tablet */
+  .form-field-age {
+    flex: 0 0 150px;
+  }
+}
+
+@media (max-width: 768px) {
+  .tutor-search-form-card {
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius-md);
+  }
+
+  .form-grid {
+    flex-direction: column;
+    gap: var(--spacing-lg);
+  }
+
+  .form-field,
+  .form-field-age {
+    flex: 1 1 100%;
+    max-width: unset;
+  }
+
+  .btn-large.search-tutor-btn {
+    font-size: var(--font-size-lg);
+    padding: var(--spacing-md);
+  }
+}

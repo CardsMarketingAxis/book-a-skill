@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book A Skill - Gift Confidence to Your Child</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="./styles/main.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="container">
+            <a href="#" class="logo-link">
+                <img src="./images/logo.png" alt="Book A Skill Logo" class="site-logo">
+            </a>
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="#" class="nav-link active">Home</a></li>
+                    <li><a href="#" class="nav-link">Find a Tutor</a></li>
+                    <li><a href="#" class="nav-link">How it Works</a></li>
+                    <li><a href="#" class="nav-link">About Us</a></li>
+                    <li><a href="#" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="auth-buttons">
+                <a href="#" class="btn btn-text">Login</a>
+                <a href="#" class="btn btn-primary">Sign Up</a>
+            </div>
+            <button class="menu-toggle" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <section class="hero-section">
+        <div class="container hero-content">
+            <h1 class="hero-headline">Gift confidence to your child</h1>
+            <p class="hero-subheadline">
+                Connect with top-rated, experienced tutors for personalized 1-on-1 sessions.
+                Helping your child excel in any subject or skill.
+            </p>
+
+            <div class="tutor-search-form-card">
+                <div class="form-grid">
+                    <div class="form-field form-field-age">
+                        <div class="label-and-icon-wrapper">
+                            <i class="fas fa-birthday-cake input-label-icon"></i>
+                            <label for="learner-age" class="form-label">Learner's Age</label>
+                        </div>
+                        <div class="input-stepper-control">
+                            <button type="button" class="stepper-btn decrement"><i class="fas fa-minus"></i></button>
+                            <input type="number" id="learner-age" class="text-input" value="10" min="5" max="18">
+                            <button type="button" class="stepper-btn increment"><i class="fas fa-plus"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="form-field">
+                        <div class="label-and-icon-wrapper">
+                            <i class="fas fa-book input-label-icon"></i>
+                            <label for="subject" class="form-label">Skill / Subject</label>
+                        </div>
+                        <div class="input-wrapper">
+                            <input type="text" id="subject" class="text-input" placeholder="e.g., Math, Science">
+                            <div id="skill-autocomplete-dropdown" class="autocomplete-dropdown">
+                                </div>
+                        </div>
+                        <div class="form-field-subtext">Select a Skill / Subject for the learner to master</div>
+                    </div>
+
+                    <div class="form-field">
+                        <div class="label-and-icon-wrapper">
+                            <i class="fas fa-map-marker-alt input-label-icon"></i>
+                            <label for="location" class="form-label">Location</label>
+                        </div>
+                        <div class="input-wrapper">
+                            <input type="text" id="location" class="text-input" placeholder="e.g., Mumbai, Online">
+                            <div id="location-autocomplete-dropdown" class="autocomplete-dropdown">
+                                </div>
+                        </div>
+                        <div class="form-field-subtext">Area, City, State (e.g., Bandra, Mumbai, Maharashtra)</div>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-large search-tutor-btn">
+                    <i class="fas fa-search"></i> Search Tutors
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section class="benefits-section">
+        <div class="container">
+            <h2>Why Choose Book A Skill?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon-wrapper">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <h3>Personalized Learning</h3>
+                    <p>Unlock your child's full potential with customized 1-on-1 sessions tailored to their unique pace and learning style, ensuring maximum engagement and understanding.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon-wrapper">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3>Flexible Scheduling</h3>
+                    <p>Fit learning seamlessly into your busy life with convenient online and in-person options. Schedule sessions at times that work best for your family.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon-wrapper">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Top-Rated Tutors</h3>
+                    <p>Gain access to a hand-picked network of highly experienced, passionate, and background-verified educators dedicated to your child's success.</p>
+                </div>
+
+                </div>
+        </div>
+    </section>
+    <section style="padding: 100px 0; text-align: center; color: var(--color-dark-gray);">
+        <h2>[ More Content Sections Here ]</h2>
+        <p>This is where you would add additional content like 'How It Works', 'Features', 'Testimonials', etc.</p>
+    </section>
+
+    <footer style="background-color: var(--color-primary-dark); color: var(--color-white); padding: var(--spacing-2xl) 0; text-align: center;">
+        <div class="container">
+            <p>&copy; 2025 Book A Skill. All rights reserved.</p>
+            </div>
+    </footer>
+
+    <script>
+        // Ensure all JavaScript runs after the DOM is fully loaded
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // --- Learner's Age Stepper Functionality ---
+            const ageInput = document.getElementById('learner-age');
+            const decrementBtn = document.querySelector('.stepper-btn.decrement');
+            const incrementBtn = document.querySelector('.stepper-btn.increment');
+
+            if (ageInput && decrementBtn && incrementBtn) {
+                decrementBtn.addEventListener('click', () => {
+                    let currentValue = parseInt(ageInput.value);
+                    let min = parseInt(ageInput.min);
+                    if (currentValue > min) {
+                        ageInput.value = currentValue - 1;
+                    }
+                });
+
+                incrementBtn.addEventListener('click', () => {
+                    let currentValue = parseInt(ageInput.value);
+                    let max = parseInt(ageInput.max);
+                    if (currentValue < max) {
+                        ageInput.value = currentValue + 1;
+                    } else if (currentValue >= max) {
+                        ageInput.value = max;
+                    }
+                });
+
+                // Ensure input value stays within min/max if manually typed
+                ageInput.addEventListener('change', () => {
+                    let currentValue = parseInt(ageInput.value);
+                    let min = parseInt(ageInput.min);
+                    let max = parseInt(ageInput.max);
+                    if (isNaN(currentValue) || currentValue < min) {
+                        ageInput.value = min;
+                    } else if (currentValue > max) {
+                        ageInput.value = max;
+                    }
+                });
+            }
+
+
+            // --- Data for Autocomplete Fields ---
+            const categorizedSkills = [
+                {
+                    category: "Core Academics",
+                    items: ["Mathematics", "Science", "English Language Arts", "History", "Geography", "Economics"]
+                },
+                {
+                    category: "Sciences (Advanced)",
+                    items: ["Physics", "Chemistry", "Biology", "Environmental Science"]
+                },
+                {
+                    category: "Creative & Performing Arts",
+                    items: ["Music", "Art & Design", "Drama", "Creative Writing"]
+                },
+                {
+                    category: "Technology & Digital",
+                    items: ["Computer Science / Coding", "Robotics", "Web Development", "Digital Marketing"]
+                },
+                {
+                    category: "Languages",
+                    items: ["Foreign Languages (e.g., Spanish, French, German)", "Native Language Improvement", "Public Speaking"]
+                },
+                {
+                    category: "Life Skills & Hobbies",
+                    items: ["Chess", "Gardening", "Cooking", "Photography", "Finance & Budgeting"]
+                }
+            ];
+
+            const categorizedLocations = [
+                {
+                    category: "Major Cities (India)",
+                    items: ["Mumbai, Maharashtra", "Delhi, Delhi", "Bengaluru, Karnataka", "Chennai, Tamil Nadu", "Kolkata, West Bengal", "Hyderabad, Telangana", "Pune, Maharashtra", "Ahmedabad, Gujarat"]
+                },
+                {
+                    category: "Mumbai (Areas)",
+                    items: ["Bandra, Mumbai", "Andheri, Mumbai", "Colaba, Mumbai", "Thane, Mumbai", "Navi Mumbai, Mumbai", "Powai, Mumbai", "South Mumbai, Mumbai"]
+                },
+                {
+                    category: "Delhi NCR (Areas)",
+                    items: ["Connaught Place, Delhi", "Gurgaon, Haryana", "Noida, Uttar Pradesh", "South Delhi, Delhi", "Dwarka, Delhi", "Ghaziabad, Uttar Pradesh"]
+                },
+                {
+                    category: "Online",
+                    items: ["Online (Remote)"]
+                }
+            ];
+
+
+            // --- Generic Autocomplete Setup Function ---
+            /**
+             * Sets up autocomplete functionality for a given input field.
+             * @param {HTMLElement} inputElement - The input field element.
+             * @param {HTMLElement} dropdownElement - The custom dropdown container element.
+             * @param {Array} dataCategories - Array of objects, each with 'category' (string) and 'items' (array of strings).
+             */
+            function setupAutocomplete(inputElement, dropdownElement, dataCategories) {
+                let activeItemIndex = -1; // To track currently highlighted item for keyboard navigation
+
+                /**
+                 * Renders suggestions in the autocomplete dropdown based on filtered data.
+                 * @param {Array} data - An array of categorized item objects to display.
+                 */
+                function renderSuggestions(data) {
+                    dropdownElement.innerHTML = ''; // Clear previous suggestions
+                    activeItemIndex = -1; // Reset active item on new render
+
+                    if (data.length === 0) {
+                        dropdownElement.style.display = 'none';
+                        return;
+                    }
+
+                    let htmlContent = '';
+                    data.forEach(categoryGroup => {
+                        if (categoryGroup.items.length > 0) {
+                            htmlContent += `<div class="autocomplete-category-header">${categoryGroup.category}</div>`;
+                            categoryGroup.items.forEach(item => {
+                                htmlContent += `<div class="autocomplete-item" data-value="${item}">${item}</div>`;
+                            });
+                        }
+                    });
+                    dropdownElement.innerHTML = htmlContent;
+                    dropdownElement.style.display = 'block';
+                }
+
+                /**
+                 * Filters the categorized items based on the user's query.
+                 * @param {string} query - The text entered by the user.
+                 * @returns {Array} - Filtered and categorized items.
+                 */
+                function filterSuggestions(query) {
+                    const lowerCaseQuery = query.toLowerCase();
+                    const filteredData = dataCategories.map(categoryGroup => {
+                        return {
+                            category: categoryGroup.category,
+                            items: categoryGroup.items.filter(item =>
+                                item.toLowerCase().includes(lowerCaseQuery)
+                            )
+                        };
+                    });
+                    // Only return categories that still have items after filtering
+                    return filteredData.filter(categoryGroup => categoryGroup.items.length > 0);
+                }
+
+                /**
+                 * Selects a suggestion, populates the input, and hides the dropdown.
+                 * @param {HTMLElement} itemElement - The clicked suggestion item HTML element.
+                 */
+                function selectSuggestion(itemElement) {
+                    inputElement.value = itemElement.dataset.value;
+                    hideDropdown();
+                }
+
+                /**
+                 * Hides the autocomplete dropdown.
+                 */
+                function hideDropdown() {
+                    dropdownElement.style.display = 'none';
+                    activeItemIndex = -1; // Reset index when hidden
+                }
+
+                /**
+                 * Highlights a specific item in the dropdown for keyboard navigation.
+                 * @param {number} index - The index of the item to highlight.
+                 */
+                function highlightItem(index) {
+                    const items = Array.from(dropdownElement.querySelectorAll('.autocomplete-item'));
+                    items.forEach((item, i) => {
+                        if (i === index) {
+                            item.classList.add('selected');
+                            // Scroll into view if item is not visible
+                            item.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+                        } else {
+                            item.classList.remove('selected');
+                        }
+                    });
+                }
+
+                // --- Event Listeners for this Autocomplete Instance ---
+
+                // Show suggestions on focus or when typing
+                inputElement.addEventListener('input', () => {
+                    const query = inputElement.value;
+                    const filtered = filterSuggestions(query);
+                    renderSuggestions(filtered);
+                });
+
+                inputElement.addEventListener('focus', () => {
+                    // Show all suggestions if input is empty on focus
+                    if (inputElement.value === '') {
+                        renderSuggestions(dataCategories); // Show all initial categories and items
+                    } else {
+                        // Otherwise, re-filter based on current value
+                        const query = inputElement.value;
+                        const filtered = filterSuggestions(query);
+                        renderSuggestions(filtered);
+                    }
+                });
+
+                // Hide dropdown when focus leaves input or dropdown
+                // Use setTimeout to allow click events on dropdown to register first
+                inputElement.addEventListener('blur', () => {
+                    setTimeout(() => {
+                        if (!dropdownElement.contains(document.activeElement)) {
+                            hideDropdown();
+                        }
+                    }, 100); // Small delay to allow click on dropdown item to register
+                });
+
+                // Handle clicks on suggestion items (using mousedown to prevent blur from firing too early)
+                dropdownElement.addEventListener('mousedown', (event) => {
+                    const item = event.target.closest('.autocomplete-item');
+                    if (item) {
+                        selectSuggestion(item);
+                        inputElement.focus(); // Return focus to input after selection
+                    }
+                });
+
+                // Keyboard navigation (Arrow Up/Down, Enter, Escape)
+                inputElement.addEventListener('keydown', (event) => {
+                    const items = Array.from(dropdownElement.querySelectorAll('.autocomplete-item'));
+                    if (items.length === 0) return; // No items to navigate
+
+                    if (event.key === 'ArrowDown') {
+                        event.preventDefault(); // Prevent cursor from moving in input
+                        activeItemIndex = (activeItemIndex + 1) % items.length;
+                        highlightItem(activeItemIndex);
+                    } else if (event.key === 'ArrowUp') {
+                        event.preventDefault(); // Prevent cursor from moving in input
+                        activeItemIndex = (activeItemIndex - 1 + items.length) % items.length;
+                        highlightItem(activeItemIndex);
+                    } else if (event.key === 'Enter') {
+                        event.preventDefault(); // Prevent form submission
+                        if (activeItemIndex > -1 && items[activeItemIndex]) {
+                            selectSuggestion(items[activeItemIndex]);
+                        } else {
+                            // If nothing is highlighted, but Enter is pressed, simply hide dropdown
+                            hideDropdown();
+                        }
+                    } else if (event.key === 'Escape') {
+                        hideDropdown();
+                        inputElement.blur(); // Remove focus from input as well
+                    }
+                });
+            }
+
+            // --- Initialize Autocomplete for Skill / Subject ---
+            const subjectInput = document.getElementById('subject');
+            const skillAutocompleteDropdown = document.getElementById('skill-autocomplete-dropdown');
+            setupAutocomplete(subjectInput, skillAutocompleteDropdown, categorizedSkills);
+
+            // --- Initialize Autocomplete for Location ---
+            const locationInput = document.getElementById('location');
+            const locationAutocompleteDropdown = document.getElementById('location-autocomplete-dropdown');
+            setupAutocomplete(locationInput, locationAutocompleteDropdown, categorizedLocations);
+
+            // --- Global Click Listener to Hide Dropdowns if click outside both ---
+            document.addEventListener('click', (event) => {
+                // Check if the click was outside both the subject input/dropdown AND location input/dropdown
+                const isClickOutsideSubject = !subjectInput.contains(event.target) && !skillAutocompleteDropdown.contains(event.target);
+                const isClickOutsideLocation = !locationInput.contains(event.target) && !locationAutocompleteDropdown.contains(event.target);
+
+                if (isClickOutsideSubject) {
+                    skillAutocompleteDropdown.style.display = 'none'; // Hide skill dropdown
+                }
+                if (isClickOutsideLocation) {
+                    locationAutocompleteDropdown.style.display = 'none'; // Hide location dropdown
+                }
+            });
+        });
+    </script>
+</body>
+</html>

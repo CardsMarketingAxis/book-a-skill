@@ -1,0 +1,539 @@
+/* ========================================= */
+/* Global CSS - Book A Skill Design System   */
+/* This file contains all global styles,     */
+/* variables, and component styles.          */
+/* ========================================= */
+
+/* --- 1. Design System Variables --- */
+:root {
+  /* Primary Brand Colors */
+  --color-primary-dark: #142236;   /* Dark Navy/Indigo from logo background, refined */
+  --color-brand-yellow: #FFC107;   /* Vibrant Yellow from logo text/book */
+  --color-brand-yellow-hover: #E0AB00; /* Slightly darker yellow for hover state */
+  --color-brand-red: #E64A19;      /* Energetic Red/Orange from logo book */
+  --color-brand-red-hover: #CC3F15; /* Slightly darker red for hover state */
+
+  /* Neutral & Supporting Colors */
+  --color-white: #FFFFFF;
+  --color-light-gray: #F0F2F5;     /* For backgrounds, subtle accents */
+  --color-medium-gray: #A0A4A8;    /* For secondary text, borders, default icons/placeholders */
+  --color-dark-gray: #333333;      /* For primary body text */
+  --color-darker-gray-label: #555555; /* Darker gray for labels */
+  --color-subtext-gray: #777777; /* Slightly darker than medium gray for subtext */
+
+
+  /* Semantic Colors (for alerts, success messages, etc.) */
+  --color-success: #28a745;
+  --color-error: #dc3545;
+  --color-warning: #ffc107;
+  --color-info: #17a2b8;
+
+  /* Font Families */
+  --font-family-primary: 'Inter', sans-serif;
+
+  /* Font Sizes (Modular Scale - using rem for accessibility) */
+  --font-size-base: 1rem;       /* 16px */
+  --font-size-xs: 0.75rem;      /* 12px - For smaller labels and subtext */
+  --font-size-sm: 0.875rem;     /* 14px */
+  --font-size-md: 1.125rem;     /* 18px */
+  --font-size-lg: 1.25rem;      /* 20px - Finalized for placeholder text */
+  --font-size-xl: 1.5rem;       /* 24px - Finalized for actual input values */
+  --font-size-2xl: 2rem;        /* 32px */
+  --font-size-3xl: 2.5rem;      /* 40px */
+  --font-size-4xl: 3rem;        /* 48px */
+
+  /* Line Heights */
+  --line-height-heading: 1.2;
+  --line-height-body: 1.6;
+
+  /* Font Weights */
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600; /* Finalized for placeholder text */
+  --font-weight-bold: 700;
+  --font-weight-extra-bold: 800; /* Finalized for input values */
+
+  /* Spacing Scale (based on 8px grid) */
+  --spacing-xxs: 0.25rem;  /* 4px */
+  --spacing-xs: 0.5rem;    /* 8px */
+  --spacing-sm: 0.75rem;   /* 12px */
+  --spacing-md: 1rem;      /* 16px */
+  --spacing-lg: 1.5rem;    /* 24px */
+  --spacing-xl: 2rem;      /* 32px */
+  --spacing-2xl: 3rem;     /* 48px - Finalized height for inputs */
+  --spacing-3xl: 4rem;     /* 64px */
+  --spacing-4xl: 5rem;     /* 80px */
+
+  /* Border Radius */
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 12px;
+  --border-radius-full: 9999px; /* For pills, circles */
+
+  /* Box Shadows */
+  --box-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.02);
+  --box-shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  --box-shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* --- 2. Base / Global Styles --- */
+*, *::before, *::after {
+  box-sizing: border-box; /* Ensures padding and border are included in element's total width and height */
+}
+
+body {
+  margin: 0; /* Remove default browser margin */
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-body);
+  color: var(--color-dark-gray);
+  -webkit-font-smoothing: antialiased; /* Better font rendering on macOS/iOS */
+  -moz-osx-font-smoothing: grayscale; /* Better font rendering on macOS */
+  background-color: var(--color-light-gray); /* A very subtle background for the page */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family-primary);
+  line-height: var(--line-height-heading);
+  color: var(--color-primary-dark);
+  font-weight: var(--font-weight-bold);
+  margin-top: 0; /* Remove default top margin */
+  margin-bottom: var(--spacing-md); /* Consistent bottom margin */
+}
+
+h1 { font-size: var(--font-size-3xl); }
+h2 { font-size: var(--font-size-2xl); }
+h3 { font-size: var(--font-size-xl); }
+h4 { font-size: var(--font-size-lg); }
+h5 { font-size: var(--font-size-md); }
+h6 { font-size: var(--font-size-base); }
+
+p {
+  margin-top: 0;
+  margin-bottom: var(--spacing-md);
+}
+
+a {
+  color: var(--color-brand-red); /* Default link color */
+  text-decoration: none; /* No default underline */
+}
+
+a:hover {
+  text-decoration: underline; /* Underline on hover for standard links */
+}
+
+/* Helper container for consistent content width */
+.container {
+  max-width: 1200px; /* Max width for content to keep it readable */
+  margin: 0 auto;    /* Center the container */
+  padding: 0 var(--spacing-lg); /* Padding on sides for smaller screens */
+}
+
+
+/* --- 3. Header Component Styles --- */
+.main-header {
+  background-color: var(--color-primary-dark);
+  padding: var(--spacing-md) 0;
+  box-shadow: var(--box-shadow-sm);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.main-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-logo {
+  height: 55px; /* Adjusted height for the new horizontal logo */
+  width: auto; /* Maintain aspect ratio */
+  display: block;
+  max-width: 250px; /* Allow more width for the horizontal logo */
+}
+
+.main-nav .nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: var(--spacing-lg);
+}
+
+.main-nav .nav-link {
+  text-decoration: none;
+  color: var(--color-white);
+  font-weight: var(--font-weight-medium);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  transition: color 0.3s ease;
+}
+
+.main-nav .nav-link:hover,
+.main-nav .nav-link.active {
+  color: var(--color-brand-yellow);
+}
+
+/* Auth Buttons Styling (Component-level) */
+.auth-buttons {
+  display: flex;
+  gap: var(--spacing-md);
+}
+
+.btn {
+  font-size: var(--font-size-base);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--border-radius-sm);
+  text-decoration: none;
+  font-weight: var(--font-weight-semibold);
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-primary {
+  background-color: var(--color-brand-yellow);
+  color: var(--color-primary-dark);
+  border: 1px solid var(--color-brand-yellow);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-brand-yellow-hover);
+  border-color: var(--color-brand-yellow-hover);
+}
+
+.btn-text {
+  background-color: transparent;
+  color: var(--color-white);
+  border: 1px solid transparent;
+}
+
+.btn-text:hover {
+  color: var(--color-brand-yellow);
+}
+
+/* Mobile Menu Toggle (hidden on desktop) */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: var(--font-size-xl);
+  color: var(--color-white);
+  cursor: pointer;
+}
+
+/* Basic Responsive adjustments for header */
+@media (max-width: 768px) {
+  .main-nav,
+  .auth-buttons {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .main-header .container {
+    justify-content: space-between;
+  }
+}
+
+/* --- 4. Hero Section Styles with Search Form --- */
+.hero-section {
+  background-color: var(--color-primary-dark);
+  padding: var(--spacing-4xl) 0 var(--spacing-3xl) 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 550px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-section .hero-content {
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-headline {
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-white);
+  margin-bottom: var(--spacing-sm);
+  line-height: 1.1;
+  max-width: 900px;
+}
+
+.hero-subheadline {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-white);
+  max-width: 700px;
+  margin: 0 auto var(--spacing-xl) auto;
+}
+
+/* --- Tutor Search Form Card --- */
+.tutor-search-form-card {
+  background-color: var(--color-white);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-xl) var(--spacing-2xl);
+  box-shadow: var(--box-shadow-lg);
+  width: 100%;
+  max-width: 950px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-grid {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+}
+
+.form-field {
+  text-align: left;
+  flex: 1;
+  min-width: 180px; /* Default min-width for flexible fields */
+  display: flex; /* Use flex to stack label/icon and input-wrapper */
+  flex-direction: column;
+}
+
+/* Specific width for Learner's Age field on larger screens */
+.form-field-age {
+  flex: 0 0 150px; /* Fixed width for desktop */
+}
+
+.form-label {
+  display: block;
+  font-size: var(--font-size-xs); /* Smaller font for labels */
+  font-weight: var(--font-weight-medium); /* Less bold for labels */
+  color: var(--color-darker-gray-label);
+  margin-bottom: var(--spacing-xxs); /* Space between label and input */
+  white-space: nowrap;
+}
+
+/* Wrapper for icon and label for precise horizontal positioning */
+.label-and-icon-wrapper {
+  display: flex;
+  align-items: baseline; /* Align icon and label by their baselines for precise alignment */
+  margin-bottom: var(--spacing-xxs); /* Small space before input */
+}
+
+/* Styles for icons appearing next to labels */
+.input-label-icon {
+  margin-right: var(--spacing-xs); /* Space between icon and label text */
+  color: var(--color-darker-gray-label); /* Match label color */
+  font-size: var(--font-size-base); /* Proportionate size to align with label */
+}
+
+/* Wrapper for input itself (used for Subject & Location) */
+.input-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+/* General Input Styles (for text and future select if any) */
+.text-input,
+.select-input {
+  width: 100%;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: 1px solid var(--color-light-gray);
+  border-radius: var(--border-radius-sm);
+  font-size: var(--font-size-xl); /* Finalized: XL font for actual input values (24px) */
+  color: var(--color-dark-gray);
+  background-color: var(--color-light-gray);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding-right: var(--spacing-md); /* Standard padding on right, no icon inside */
+  height: var(--spacing-2xl); /* Finalized: Height to accommodate XL font (48px) */
+  font-weight: var(--font-weight-extra-bold); /* Finalized: Extra bold for actual input values */
+}
+
+/* Make placeholder text mid-sized and regular weight */
+.text-input::placeholder {
+  font-weight: var(--font-weight-semibold); /* Finalized: Semibold weight for placeholder */
+  color: var(--color-medium-gray);
+  opacity: 1;
+  font-size: var(--font-size-lg); /* Finalized: LG font for placeholder (20px) */
+}
+
+.text-input:focus,
+.select-input:focus,
+.input-stepper-control:focus-within { /* Added focus-within for stepper control */
+  outline: none;
+  border-color: var(--color-brand-yellow);
+  box-shadow: 0 0 0 2px rgba(255, 193, 7, 0.2);
+}
+
+/* Specific styling for select input (if still used elsewhere) */
+.select-input {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23A0A4A8'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right var(--spacing-md) center;
+  background-size: 16px;
+}
+
+/* Hide native spinner arrows for number input (used within stepper) */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+/* Old .input-icon styles are no longer used for icons inside inputs. */
+/* Keeping this rule here with display: none to ensure no accidental display if old HTML lingers. */
+.input-wrapper .input-icon {
+  display: none;
+}
+
+/* New Sub-text below input fields */
+.form-field-subtext {
+  font-size: var(--font-size-xs); /* Smallest font size */
+  color: var(--color-subtext-gray); /* Slightly darker than medium gray */
+  margin-top: var(--spacing-xxs); /* Small gap from the input field */
+  line-height: 1.4;
+  white-space: normal; /* Allow text to wrap */
+}
+
+/* --- Stepper Control Styling for Learner's Age --- */
+.input-stepper-control {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color: var(--color-light-gray); /* Match input background */
+  border: 1px solid var(--color-light-gray);
+  border-radius: var(--border-radius-sm);
+  height: var(--spacing-2xl); /* Match other input heights (48px) */
+  overflow: hidden; /* Ensure buttons and input fit within rounded corners */
+}
+
+.input-stepper-control .text-input {
+  flex-grow: 1;
+  text-align: center; /* Center the number in the input */
+  border: none; /* Remove border as it's on the parent wrapper */
+  background-color: transparent; /* Transparent background */
+  padding: 0; /* Remove padding to be controlled by wrapper/buttons */
+  /* Re-apply final text styles for the number itself */
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-extra-bold);
+  color: var(--color-dark-gray);
+}
+
+.stepper-btn {
+  background-color: var(--color-light-gray); /* Subtle background for buttons */
+  color: var(--color-medium-gray);
+  border: none;
+  padding: 0 var(--spacing-sm); /* Padding for button content */
+  font-size: var(--font-size-md); /* Size of +/- icons */
+  font-weight: var(--font-weight-bold);
+  cursor: pointer;
+  height: 100%; /* Make buttons fill the height of the control */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  width: var(--spacing-2xl); /* Fixed width for button (48px) */
+  flex-shrink: 0; /* Prevent buttons from shrinking */
+}
+
+.stepper-btn:hover {
+  background-color: var(--color-brand-yellow-hover);
+  color: var(--color-primary-dark);
+}
+
+.stepper-btn:active {
+  background-color: var(--color-brand-yellow);
+}
+
+
+/* Search Tutor Button */
+.search-tutor-btn {
+  width: fit-content;
+  min-width: 200px;
+  align-self: center;
+  margin-top: var(--spacing-md);
+}
+
+.search-tutor-btn i {
+  margin-right: var(--spacing-xs);
+}
+
+/* Responsive adjustments for Hero Section with Search */
+@media (max-width: 992px) {
+  .hero-headline {
+    font-size: var(--font-size-3xl);
+  }
+
+  .tutor-search-form-card {
+    padding: var(--spacing-lg);
+    max-width: 700px;
+  }
+
+  .form-grid {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--spacing-lg);
+  }
+
+  .form-field {
+    flex: 0 0 calc(50% - var(--spacing-lg) / 2); /* Two columns */
+    min-width: unset;
+  }
+
+  /* Specific adjustment for form-field-age on tablet */
+  .form-field-age {
+    flex: 0 0 150px; /* Maintain fixed width, will likely cause wrap */
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding: var(--spacing-3xl) 0;
+    min-height: 500px;
+  }
+
+  .hero-headline {
+    font-size: var(--font-size-2xl);
+  }
+
+  .hero-subheadline {
+    font-size: var(--font-size-base);
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .tutor-search-form-card {
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius-md);
+  }
+
+  .form-grid {
+    flex-direction: column; /* Stack fields vertically on mobile */
+    gap: var(--spacing-lg);
+  }
+
+  .form-field,
+  .form-field-age { /* Apply full width to age field on mobile as well */
+    flex: 1 1 100%;
+    max-width: unset; /* Remove max-width constraint for mobile */
+  }
+
+  .btn-large.search-tutor-btn {
+    font-size: var(--font-size-lg);
+    padding: var(--spacing-md);
+  }
+}

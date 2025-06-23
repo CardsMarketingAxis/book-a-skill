@@ -1,0 +1,76 @@
+/* --- Variables --- */
+:root {
+  /* Primary Brand Colors */
+  --color-primary-dark: #142236;
+  --color-brand-yellow: #FFC107;
+  --color-brand-yellow-hover: #E0AB00;
+  --color-brand-red: #E64A19;
+  --color-brand-red-hover: #CC3F15;
+
+  /* Neutral & Supporting Colors */
+  --color-white: #FFFFFF;
+  --color-light-gray: #F0F2F5;
+  --color-medium-gray: #A0A4A8;
+  --color-dark-gray: #333333;
+  --color-darker-gray-label: #555555;
+  --color-subtext-gray: #777777;
+
+  /* Semantic Colors */
+  --color-success: #28a745;
+  --color-error: #dc3545;
+  --color-warning: #ffc107;
+  --color-info: #17a2b8;
+
+  /* Font Families */
+  --font-family-primary: 'Inter', sans-serif;
+
+  /* Font Sizes (Modular Scale - using rem for accessibility) */
+  --font-size-base: 1rem;
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-md: 1.125rem;
+  --font-size-lg: 1.25rem;
+  --font-size-xl: 1.5rem;
+  --font-size-2xl: 2rem;
+  --font-size-3xl: 2.5rem;
+  --font-4xl: 3rem; /* Typo corrected from font-size-4xl to font-4xl */
+  --font-size-4xl: 3rem; /* Keeping both for safety if other uses exist */
+
+
+  /* Line Heights */
+  --line-height-heading: 1.2;
+  --line-height-body: 1.6;
+
+  /* Font Weights */
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extra-bold: 800;
+
+  /* Spacing Scale (based on 8px grid) */
+  --spacing-xxs: 0.25rem; /* 4px */
+  --spacing-xs: 0.5rem;  /* 8px */
+  --spacing-sm: 0.75rem; /* 12px */
+  --spacing-md: 1rem;    /* 16px */
+  --spacing-lg: 1.5rem;  /* 24px */
+  --spacing-xl: 2rem;    /* 32px */
+  --spacing-2xl: 3rem;   /* 48px */
+  --spacing-3xl: 4rem;   /* 64px */
+  --spacing-4xl: 5rem;   /* 80px */
+
+  /* Border Radius */
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 12px;
+  --border-radius-full: 9999px;
+
+  /* Box Shadows */
+  --box-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.02);
+  --box-shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  --box-shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
+
+  /* NEW: Softer, more modern dropdown shadow */
+  --box-shadow-dropdown: 0 6px 16px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.05);
+}

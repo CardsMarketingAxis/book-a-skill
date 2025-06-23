@@ -1,0 +1,87 @@
+/* --- Custom Autocomplete Dropdown Styles (Revised Appearance) --- */
+
+.autocomplete-dropdown {
+    position: absolute;
+    width: 100%;
+    max-height: 280px; /* Slightly increased height for more items */
+    overflow-y: auto;
+    background-color: var(--color-white);
+    /* Rely on box-shadow for definition, very subtle border */
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-top: none; /* Keeps it visually connected to the input */
+    border-radius: 0 0 var(--border-radius-md) var(--border-radius-md); /* Consistent rounded corners */
+    box-shadow: var(--box-shadow-dropdown); /* Softer, more modern shadow */
+    z-index: 999; /* Ensure it appears above other content */
+    display: none; /* Hidden by default, controlled by JS */
+    font-size: var(--font-size-sm); /* Slightly smaller font for list items */
+    color: var(--color-dark-gray);
+    padding: var(--spacing-xxs) 0; /* Vertical padding inside dropdown */
+}
+
+/* Custom Scrollbar Styling (Webkit Browsers like Chrome/Safari) */
+.autocomplete-dropdown::-webkit-scrollbar {
+    width: 8px; /* Width of the scrollbar */
+}
+
+.autocomplete-dropdown::-webkit-scrollbar-track {
+    background: var(--color-light-gray); /* Background of the scrollbar track */
+    border-radius: var(--border-radius-full);
+}
+
+.autocomplete-dropdown::-webkit-scrollbar-thumb {
+    background-color: var(--color-medium-gray); /* Color of the scrollbar thumb */
+    border-radius: var(--border-radius-full); /* Rounded thumb */
+    border: 2px solid var(--color-light-gray); /* Creates a margin around the thumb */
+}
+
+
+.autocomplete-category-header {
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-darker-gray-label); /* Softer color for category text */
+    font-size: var(--font-size-xs); /* Slightly smaller for subtle hierarchy */
+    text-transform: uppercase; /* Modern touch */
+    letter-spacing: 0.05em; /* A bit of letter spacing */
+    padding: var(--spacing-sm) var(--spacing-md) var(--spacing-xxs) var(--spacing-md);
+    background-color: var(--color-light-gray); /* Light background for distinction */
+    position: sticky; /* Keep headers visible when scrolling */
+    top: 0;
+    z-index: 1000; /* Ensure header is above regular items */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05); /* Very light separator line */
+    margin-top: var(--spacing-sm); /* More spacing above new categories */
+}
+/* Remove margin-top for the very first category header to align with dropdown top */
+.autocomplete-category-header:first-of-type {
+    margin-top: 0;
+}
+
+
+.autocomplete-item {
+    padding: var(--spacing-sm) var(--spacing-md); /* Consistent padding */
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    display: block; /* Ensure it takes full width and padding applies */
+    line-height: 1.4;
+    /* No individual bottom borders, separation by padding/hover/background */
+}
+
+.autocomplete-item:hover,
+.autocomplete-item.selected { /* 'selected' class for keyboard navigation highlight */
+    background-color: rgba(255, 193, 7, 0.1); /* Very subtle yellow tint for hover/selected */
+    color: var(--color-dark-gray); /* Keep text dark for readability */
+}
+
+/* Ensure the input-wrapper is positioned relatively so the dropdown is positioned correctly */
+.input-wrapper {
+    position: relative; /* This is crucial for absolute positioning of the dropdown */
+    /* Ensure no overflow hidden that might clip the dropdown */
+    overflow: visible;
+}
+
+/* On smaller screens, allow dropdown to go full width */
+@media (max-width: 768px) {
+  .autocomplete-dropdown {
+    left: 0;
+    right: 0;
+    max-width: 100%;
+  }
+}

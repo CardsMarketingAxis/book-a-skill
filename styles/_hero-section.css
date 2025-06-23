@@ -1,0 +1,60 @@
+/* --- Hero Section Styles with Search Form --- */
+.hero-section {
+  background-color: var(--color-primary-dark);
+  padding: var(--spacing-4xl) 0 var(--spacing-3xl) 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 550px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-section .hero-content {
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-headline {
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-white);
+  margin-bottom: var(--spacing-sm);
+  line-height: 1.1;
+  max-width: 900px;
+}
+
+.hero-subheadline {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-white);
+  max-width: 700px;
+  margin: 0 auto var(--spacing-xl) auto;
+}
+
+/* Responsive adjustments for Hero Section */
+@media (max-width: 992px) {
+  .hero-headline {
+    font-size: var(--font-size-3xl);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding: var(--spacing-3xl) 0;
+    min-height: 500px;
+  }
+
+  .hero-headline {
+    font-size: var(--font-size-2xl);
+  }
+
+  .hero-subheadline {
+    font-size: var(--font-size-base);
+    margin-bottom: var(--spacing-lg);
+  }
+}
