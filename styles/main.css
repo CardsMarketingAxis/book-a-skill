@@ -4,10 +4,10 @@
  */
 
 /* 1. Variables and Design Tokens */
-@import url('./_variables.css');
+@import url('./variables.css');
 
 /* 2. Base Styles and Global Utilities */
-@import url('./_base.css');
+@import url("./_base.css");
 
 /* 3. Component Specific Styles */
 @import url('./_header.css');
